@@ -1,0 +1,72 @@
+{
+  "LED"  :
+              {
+                "Reserve": {"Red": {"Pin" : 11 , "device": "mcp1" , "direction" : "OUTPUT", "default" : 0  },
+                      "Green": {"Pin" : 12 , "device": "mcp1" , "direction" : "OUTPUT", "default" : 0 },
+                      "Blue": {"Pin": 13, "device": "mcp1", "direction": "OUTPUT", "default": 0 } 
+					  },
+               "Monday": {"Red": {"Pin": 8, "device": "mcp1", "direction": "OUTPUT", "default": 0 },
+                      "Green": {"Pin": 9, "device": "mcp1", "direction": "OUTPUT", "default": 0 },
+                      "Blue": {"Pin": 10, "device": "mcp1", "direction": "OUTPUT", "default": 0 }
+					  },
+               "Tuesday": {"Red": {"Pin": 2, "device": "mcp1", "direction": "OUTPUT", "default": 0 },
+                      "Green": {"Pin": 3, "device": "mcp1", "direction": "OUTPUT", "default": 0 },
+                      "Blue": {"Pin": 4, "device": "mcp1", "direction": "OUTPUT", "default": 0 }
+					  },
+               "Wednesday": {"Red": {"Pin": 5, "device": "mcp1", "direction": "OUTPUT", "default": 0 },
+                      "Green": {"Pin": 6, "device": "mcp1", "direction": "OUTPUT", "default": 0 },
+                      "Blue": {"Pin": 7, "device": "mcp1", "direction": "OUTPUT", "default": 0 }
+					  },
+               "Thursday": {"Red": {"Pin": 11, "device": "mcp2", "direction": "OUTPUT", "default": 0 },
+                      "Green": {"Pin": 12, "device": "mcp2", "direction": "OUTPUT", "default": 0 },
+                      "Blue": {"Pin": 13, "device": "mcp2", "direction": "OUTPUT", "default": 0 }
+					  },
+               "Friday": {"Red": {"Pin": 8, "device": "mcp2", "direction": "OUTPUT", "default": 0 },
+                      "Green": {"Pin": 9, "device": "mcp2", "direction": "OUTPUT", "default": 0 },
+                      "Blue": {"Pin": 10, "device": "mcp2", "direction": "OUTPUT", "default": 0 }
+					  },
+               "Saturday": {"Red": {"Pin": 2, "device": "mcp2", "direction": "OUTPUT", "default": 0 },
+                      "Green": {"Pin": 3, "device": "mcp2", "direction": "OUTPUT", "default": 0 },
+                      "Blue": {"Pin": 4, "device": "mcp2", "direction": "OUTPUT", "default": 0 }
+					  },
+               "Sunday": {"Red": {"Pin": 5, "device": "mcp2", "direction": "OUTPUT", "default": 0 },
+                      "Green": {"Pin": 6, "device": "mcp2", "direction": "OUTPUT", "default": 0 },
+                      "Blue": {"Pin": 7, "device": "mcp2", "direction": "OUTPUT", "default": 0 }
+					  } 
+               },
+  "Detection":
+              {
+                "Reserve": {"Pin" : 10 , "device": "rpi" , "direction" : "INPUT", "default" : "PULLUP"},
+                "Monday": {"Pin": 24, "device": "rpi", "direction": "INPUT", "default": "PULLUP"},
+                "Tuesday": {"Pin": 23, "device": "rpi", "direction": "INPUT", "default": "PULLUP"},
+                "Wednesday": {"Pin": 17, "device": "rpi", "direction": "INPUT", "default": "PULLUP"},
+                "Thursday": {"Pin": 7, "device": "rpi", "direction": "INPUT", "default": "PULLUP"},
+                "Friday": {"Pin": 8, "device": "rpi", "direction": "INPUT", "default": "PULLUP"},
+                "Saturday": {"Pin": 11, "device": "rpi", "direction": "INPUT", "default": "PULLUP"},
+                "Sunday": {"Pin": 25, "device": "rpi", "direction": "INPUT", "default": "PULLUP"}
+              },
+  "Motor1":
+              {"Step": {"Pin" : 26 , "device": "rpi" , "direction" : "OUTPUT", "default" : 0},
+                "Enable": {"Pin": 20, "device": "rpi", "direction": "OUTPUT", "default": 1},
+                "Direction": {"Pin": 16, "device": "rpi", "direction": "OUTPUT", "default": 0},
+                "M0": {"Pin": 15, "device": "mcp1", "direction": "OUTPUT", "default": 0},
+                "M1": {"Pin": 14, "device": "mcp1", "direction": "OUTPUT", "default": 0},
+                "M2": {"Pin": 0, "device": "mcp1", "direction": "OUTPUT", "default": 0},
+                "Kalibration": {"Pin": 9, "device": "rpi", "direction": "INPUT", "default": "PULLUP"}
+              },
+  "Motor2":
+              { "Step": {"Pin": 13, "device": "rpi", "direction": "OUTPUT", "default": 0},
+                "Enable": {"Pin": 19, "device": "rpi", "direction": "OUTPUT", "default": 1},
+                "Direction": {"Pin": 6, "device": "rpi", "direction": "OUTPUT", "default": 0},
+                "M0": {"Pin": 15, "device": "mcp2", "direction": "OUTPUT", "default": 0},
+                "M1": {"Pin": 14, "device": "mcp2", "direction": "OUTPUT", "default": 0},
+                "M2": {"Pin": 0, "device": "mcp2", "direction": "OUTPUT", "default": 0},
+                "Kalibration": {"Pin": 5, "device": "rpi", "direction": "INPUT", "default": "PULLUP"}
+              },
+  "Relais":
+              {"Pin" : 12 , "device": "rpi" , "direction" : "OUTPUT", "default" : 0},
+
+  "Motion":
+              {"Pin" : 21 , "device": "rpi" , "direction" : "INPUT", "default" : "UNDEF"}
+
+}

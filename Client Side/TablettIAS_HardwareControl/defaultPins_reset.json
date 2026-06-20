@@ -1,0 +1,32 @@
+{
+  "Detection":
+              {
+                "Reserve": {"Pin" : 10 , "device": "rpi" , "direction" : "INPUT", "default" : "PULLDOWN"},
+                "Monday": {"Pin": 24, "device": "rpi", "direction": "INPUT", "default": "PULLDOWN"},
+                "Tuesday": {"Pin": 23, "device": "rpi", "direction": "INPUT", "default": "PULLDOWN"},
+                "Wednesday": {"Pin": 17, "device": "rpi", "direction": "INPUT", "default": "PULLDOWN"},
+                "Thursday": {"Pin": 7, "device": "rpi", "direction": "INPUT", "default": "PULLDOWN"},
+                "Friday": {"Pin": 8, "device": "rpi", "direction": "INPUT", "default": "PULLDOWN"},
+                "Saturday": {"Pin": 11, "device": "rpi", "direction": "INPUT", "default": "PULLDOWN"},
+                "Sunday": {"Pin": 25, "device": "rpi", "direction": "INPUT", "default": "PULLDOWN"}
+              },
+  "Motor1":
+              {"Step": {"Pin" : 26 , "device": "rpi" , "direction" : "INPUT", "default" : "PULLDOWN"},
+                "Enable": {"Pin": 20, "device": "rpi", "direction": "INPUT", "default": "PULLUP"},
+                "Direction": {"Pin": 16, "device": "rpi", "direction": "INPUT", "default": "PULLDOWN"},
+                "Kalibration": {"Pin": 9, "device": "rpi", "direction": "INPUT", "default": "PULLDOWN"}
+              },
+  "Motor2":
+              { "Step": {"Pin": 13, "device": "rpi", "direction": "INPUT", "default": "PULLDOWN"},
+                "Enable": {"Pin": 19, "device": "rpi", "direction": "INPUT", "default": "PULLUP"},
+                "Direction": {"Pin": 6, "device": "rpi", "direction": "INPUT", "default": "PULLDOWN"},
+                "Kalibration": {"Pin": 5, "device": "rpi", "direction": "INPUT", "default": "PULLDOWN"}
+              },
+  "Relais":
+              { "Rel": {"Pin" : 12 , "device": "rpi" , "direction" : "INPUT", "default" : "PULLDOWN"}
+              },
+
+  "Motion":
+              { "Mot": {"Pin" : 21 , "device": "rpi" , "direction" : "INPUT", "default" : "PULLDOWN"}
+              }
+}
