@@ -1,0 +1,813 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Nov 26 10:41:06 2022
+
+@author: shukla
+updated by: mahfouz
+
+Discription:  description of the metamodel that can be validated against its schema
+Usage: Update the meta model structure
+"""
+
+{
+"metamodel":{
+"user":{
+    "labels":"meta:user_context:external_context",    
+    "properties":{
+        "description":"text"
+
+    },
+    "relationships":{
+        "to":{
+            "vitals":"has",
+            "location":"in",
+            "activity":"doing",
+            "environment":"in",
+            "medication_plan":"has",
+            "medication_times":"has"},
+        "from": {}
+                    }
+                },
+                
+"location":{
+    "labels":"meta:user_context:external_context:dynamic",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to":{"Alarm":"AFFECTS"},
+        "from": {}
+                    }
+                },
+
+
+
+"activity":{
+    "labels":"meta:user_context:external_context:dynamic",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to":{
+            "Alarm":"AFFECTS",
+            "location":"in",
+            "running":"has",
+            "sleeping":"has",
+            "walking":"has",
+            "resting":"has",
+            "environment":"in"},
+        "from": {}
+                    }
+                },
+                                
+"vitals":{
+    "labels":"meta:user_context:external_context:vitality_context:dynamic",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to":{
+            "blood_pressure":"has",
+            "skin_temperature":"has",
+            "heart_rate":"has",
+            "respiration_rate":"has",
+            "environment":"in",
+            "activity":"doing",
+            "location":"in"},
+        "from": {}
+                    }
+                },
+"blood_pressure":{
+    "labels":"meta:user_context:external_context:vitality_context:dynamic",    
+    "properties":{
+        "description":"text",
+        "units":"temporary"    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },
+"skin_temperature":{
+    "labels":"meta:user_context:external_context:vitality_context:dynamic",    
+    "properties":{
+        "description":"text",
+        "units":"temporary"    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },
+"heart_rate":{
+    "labels":"meta:user_context:external_context:vitality_context:dynamic",    
+    "properties":{
+        "description":"text",
+        "units":"temporary"  
+    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },
+"respiration_rate":{
+    "labels":"meta:user_context:external_context:vitality_context:dynamic",    
+    "properties":{
+        "description":"text",
+        "units":"temporary"  
+    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },
+
+
+"environment":{
+    "labels":"meta:user_context:external_context:environment_context:dynamic",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to":{
+            "temperature":"has",
+            "light":"has",
+            "humidity":"has",
+            "noise":"has",
+            "pressure":"has",
+            "location":"in"},
+        "from": {}
+                    }
+                },
+"temperature":{
+    "labels":"meta:user_context:external_context:environment_context:temperature:dynamic",    
+    "properties":{
+        "description":"text",
+        "units":"Cel"  
+    
+    },
+    "relationships":{
+        "to": {"Pill Dispensing":"AFFECTS"},
+        "from": {}
+                    }
+                },
+"humidity":{
+    "labels":"meta:user_context:external_context:environment_context:humidity:dynamic",    
+    "properties":{
+        "description":"text",
+        "units":"%"  
+    
+    },
+    "relationships":{
+        "to": {"Pill Dispensing":"AFFECTS"},
+        "from": {}
+                    }
+                },
+"light":{
+    "labels":"meta:user_context:external_context:environment_context:light:dynamic",    
+    "properties":{
+        "description":"text",
+        "units":""  
+    
+    },
+    "relationships":{
+        "to": { "Alarm":"AFFECTS"},
+        "from": {}
+                    }
+                },
+"noise":{
+    "labels":"meta:user_context:external_context:environment_context:noise:dynamic",    
+    "properties":{
+        "description":"text",
+        "units":"dB"  
+    
+    },
+    "relationships":{
+        "to": {"Alarm":"AFFECTS"},
+        "from": {}
+                    }
+                },
+
+"pressure":{
+    "labels":"meta:user_context:external_context:environment_context:dynamic",    
+    "properties":{
+        "description":"text",
+        "units":"Pa"  
+    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },
+
+  
+
+
+"Systems":{
+    "labels":"meta:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {"XDK_sensor_array":"has","human_simulator":"has","fitbit":"has","pill_dispenser":"has"},
+        "from": {}
+                    }
+                },
+
+"pill_dispenser":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to":{"mobile_pill_dispenser":"has","stationary_pill_dispenser":"has"},
+        "from": {}
+                    }
+                },
+
+"mobile_pill_dispenser":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {"database":"has"},
+        "from": {}
+                    }
+                },
+"stationary_pill_dispenser":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to":{"mode":"has","power":"has","core_temperature":"has","processor_utilization":"has","hardware":"has","software":"has","environment":"in","database":"has"},
+        "from": {}
+                    }
+                },
+"mode":{
+    "labels":"meta:internal_context:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },
+"power":{
+    "labels":"meta:internal_context:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {"Position Motors":"AFFECTS",
+               "Pill Dispensing":"AFFECTS"},
+        "from": {}
+                    }
+                },
+"core_temperature":{
+    "labels":"meta:internal_context:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {"Position Motor":"AFFECTS",
+               "Pill Dispensing":"AFFECTS"},
+        "from": {}
+                    }
+                },
+"processor_utilization":{
+    "labels":"meta:internal_context:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {"Position Motors":"AFFECTS",
+               "Pill Dispensing":"AFFECTS"},
+        "from": {}
+                    }
+                },
+"hardware":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to":{"electrical":"has","mechanical":"has"},
+        "from": {}
+                    }
+                },
+"electrical":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to":{"sensors":"has","actuators":"has","power_supply":"has","control_unit":"has"},   
+        "from": {}
+                    }
+                },
+"sensors":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to":{"RTC":"has","mic":"has","PIR":"has","Mechanical_sensor":"has"},
+        "from": {}
+                    }
+                },
+"RTC":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },
+"Mechanical_sensor":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },
+"mic":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },
+"PIR":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {"pill_detection_times":"has"},
+        "from": {}
+                    }
+                },
+
+"actuators":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to":{"solenoid":"has","speaker":"has","motor":"has","LED":"has"},
+        "from": {}
+                    }
+                },
+"solenoid":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },
+"speaker":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {"Speaker_Sound_Level":"has"},
+        "from": {}
+                    }
+                },
+"motor":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {"Rotation_Speed":"has", 
+                "motor_positioning_times":"has"},
+        "from": {}
+                    }
+                },
+"LED":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to":{"8color":"has"},
+        "from": {}
+                    }
+                },
+"8color":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {"LEDs_Brightness":"has"},
+        "from": {}
+                    }
+                },
+
+"control_unit":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },
+"power_supply":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },
+
+
+"mechanical":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {"PCB":"has","magazines":"has"},
+        "from": {}
+                    }
+                },
+"PCB":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {"RTC_board":"has","main_board":"has","power_signal":"has"},
+        "from": {}
+                    }
+                },
+"RTC_board":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },
+"main_board":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },
+"power_signal":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },
+
+"magazines":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },
+
+
+"software":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to":{"communication_interface":"has","user_interface":"has","control_code":"has"},
+        "from": {}
+                    }
+                },
+"communication_interface":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },
+"user_interface":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },
+"control_code":{
+    "labels":"meta:structure:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },
+
+"database":{
+    "labels":"meta:structure:system_context:medication_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {"medication_intake_times":"stores","medication_rate":"stores","medication_plan":"stores","alarms":"stores","medication_times":"stores"},
+        "from": {}
+                    }
+                },
+
+"alarms":{
+    "labels":"meta:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {"Position Motors":"INPUT_TO"
+        },
+        "from": {}
+                    }
+                },
+"medication_times":{
+    "labels":"meta:user_context:medication_context:behaviour:dynamic",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {"Alarm":"INPUT_TO"},
+        "from": {}
+                    }
+                }, 
+
+"pill_detection_times":{
+    "labels":"meta:system_context:behaviour:dynamic",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {"Pill Dispensing":"INPUT_TO"},
+        "from": {}
+                    }
+                },   
+"motor_positioning_times":{
+    "labels":"meta:system_context:behaviour:dynamic",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },             
+                                
+                
+"medication_intake_times":{
+    "labels":"meta:user_context:medication_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },
+"medication_rate":{
+    "labels":"meta:user_context:medication_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },
+"medication_plan":{
+    "labels":"meta:user_context:medication_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },
+
+
+
+"XDK_sensor_array":{
+    "labels":"meta:structure:environment_context:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {"environment":"measures"},
+        "from": {}
+                    }
+                },
+"human_simulator":{
+    "labels":"meta:structure:system_context:vitality_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },
+"fitbit":{
+    "labels":"meta:structure:system_context:vitality_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {"vitals":"measures"},
+        "from": {}
+                    }
+                },
+"timestamp":{
+    "labels":"meta:temporal",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {},
+        "from":{"respiration_rate":"measured_at",
+                 "heart_rate":"measured_at",
+                 "skin_temperature":"measured_at",
+                 "blood_pressure":"measured_at",
+                 "location":"measured_at",
+                 "activity":"measured_at",
+                 "temperature":"measured_at",
+                 "light":"measured_at",
+                 "humidity":"measured_at",
+                 "noise":"measured_at",
+                 "pressure":"measured_at",
+                  "medication_times":"measured_at"}
+                    }
+                },
+ "Alarm":{
+    "labels":"meta:function:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {"speaker":"CONTROLS",
+               "8color":"CONTROLS",
+               "medication_times":"OUTPUT_TO"},
+        "from": {}
+                    }
+                },
+ "Speaker_Sound_Level":{
+    "labels":"meta:behaviour:system_context:dynamic",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },
+ "LEDs_Brightness":{
+    "labels":"meta:behaviour:system_context:dynamic",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },
+                
+"Position Motors":{
+    "labels":"meta:function:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {"motor":"CONTROLS"},
+        "from": {}
+                    }
+                }, 
+ "Rotation_Speed":{
+    "labels":"meta:behaviour:system_context:dynamic",    
+    "properties":{
+        "description":"text" 
+    
+    },
+    "relationships":{
+        "to": {},
+        "from": {}
+                    }
+                },
+                               
+"Pill Dispensing":{
+    "labels":"meta:function:system_context",    
+    "properties":{
+        "description":"text"
+    
+    },
+    "relationships":{
+        "to": {"solenoid":"MONITORS",
+               "PIR":"MONITORS"},
+        "from": {}
+                    }
+                }   
+            }   
+     } 
